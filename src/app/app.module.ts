@@ -1,3 +1,5 @@
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductModule } from './product/product.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -7,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductService } from './services/product.service';
 
 const ROUTES: Routes = [
   {path: '', component: HomeComponent},
@@ -24,9 +27,10 @@ const ROUTES: Routes = [
   ],
   imports: [
     BrowserModule,
+    ProductModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,10 @@ import { towels } from './../data/productData';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
 
+// RXJS
+import { Observable, throwError, pipe } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,9 +16,26 @@ export class ProductService {
   isBedsheets = false;
   isDuvets = false;
   isBlankets = false;
-  constructor() { }
 
-  //
+  uri = 'http://localhost:3000';
+
+
+  count = 0;
+
+  constructor(private http: HttpClient) { }
+  getPillows() {
+    return this.http.get(this.uri + '/products')
+    .pipe(
+      map(res => {
+        console.log('Response ', res);
+        return { res: res };
+      }),
+      catchError(error => {
+        console.log('Error ', error);
+        return throwError(error);
+      })
+    );
+  }
 
   showCurtains() {
     this.isBath = this.isRugs = this.isBedsheets = this.isDuvets = this.isBlankets = false;
@@ -36,6 +57,15 @@ export class ProductService {
 
   showBlankets() {
 
+  }
+
+  // Add to cart Count
+  getCount() {
+    return this.count;
+  }
+
+  increaseCount() {
+    this.count += 1;
   }
 
 

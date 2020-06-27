@@ -15,10 +15,12 @@ export class HomeComponent implements OnInit {
   goToProductPage(event) {
     this.categoryName = event.name;
     console.log('Events: ', event.name);
+    console.log('this.categoryName: ', this.categoryName);
     // console.log('Details: ', this.towelData);
-    this.productServie.isCurtains = true;
+    // this.productServie.isCurtains = true;
     // this.productServie.
     this.router.navigate(['products'], { queryParams: { 'category': this.categoryName} });
+    //this.router.navigateByUrl('/products', { queryParams: { 'category': this.categoryName}});
   }
   ngOnInit() {
   }

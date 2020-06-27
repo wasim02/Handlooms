@@ -86,6 +86,15 @@ export const curtains = [
     image: '../../assets/images/bathHome.jpeg',
     size: 'Xlarge',
     color: 'Gray'
+  },
+  {
+    id: '3',
+    name: 'Curtain3',
+    description: 'This is Curtain3',
+    price: 800,
+    image: '../../assets/images/bathHome.jpeg',
+    size: 'Xlarge',
+    color: 'Gray'
   }
 ];
 

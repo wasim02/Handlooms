@@ -1,3 +1,4 @@
+import { AdminModule } from './admin/admin.module';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductModule } from './product/product.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,9 +11,17 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductService } from './services/product.service';
+import { ContactModule } from './contact/contact.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
+
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
 
 const ROUTES: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'auth/signin', component: SignInComponent},
   {path: 'auth/registration', component: RegistrationComponent},
 ];
@@ -23,12 +32,19 @@ const ROUTES: Routes = [
     HomeComponent,
     SignInComponent,
     RegistrationComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
+    FlashMessagesModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     ProductModule,
-    RouterModule.forRoot(ROUTES)
+    ContactModule,
+    AdminModule,
+    RouterModule.forRoot(ROUTES, {scrollPositionRestoration: 'enabled'})
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

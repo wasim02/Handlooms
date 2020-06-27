@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto" style="background-color:rgb(255, 26, 102);">
                 <li class="nav-item active">
-                    <a style="color:white" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a style="color:white" class="nav-link" routerLink="home">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a style="color:white" class="nav-link" href="#">Offers</a>
@@ -28,19 +28,20 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a style="color:white" class="nav-link" href="#">Contact Us</a>
+                    <a style="color:white" class="nav-link" routerLink="contact">Contact Us</a>
                 </li>
                 <li class="nav-item">
                     <a style="color:white" class="nav-link" href="#">About Us</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <div class="form-inline my-2 my-lg-0">
+                <button class="btn btn-default"><i class="fas fa-shopping-cart"></i>{{ this.count }}</button>
                 <input type="text" class="form-control input-group-lg" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-sm btn-outline-secondary" type="button">Button</button>
                 </div>
-                <button class="btn btn-sm btn-danger my-2 my-sm-0" type="submit" routerLink="auth/signin">Sign In/Register</button>
-            </form>
+                <button class="btn btn-sm btn-danger my-2 my-sm-0" routerLink="auth/signin">Sign In/Register</button>
+            </div>
         </div>
     </nav>
 </div>

@@ -6,10 +6,14 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductListComponent } from './product-list/product-list.component';
 import { FilterProductComponent } from './filter-product/filter-product.component';
 
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
+
 @NgModule({
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    FlashMessagesModule.forRoot()
   ],
   exports: [
     ProductDetailComponent,

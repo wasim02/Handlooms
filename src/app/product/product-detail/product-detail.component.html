@@ -1,3 +1,42 @@
-<p>
-  product-detail works!
-</p>
+<div class="container">
+  <br><br>
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <img src="http://localhost:3000/images/{{ product.image }}" height=500px width=80% />
+    </div>
+    <div class="col-md-6 col-sm-12"><br><br>
+      <h2>{{ product.title }}</h2>
+      <p>{{ product.description }}</p>
+      <h3>₹{{ product.price }}</h3>
+      <br>
+      <div>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <a href="#"> 20 reviews</a><br>
+        <button class="btn btn-sm btn-info" href="#"> Write a review</button>
+      </div>
+      <h6>Sizes</h6>
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Choose Size
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div><br>
+
+      <div>
+        <span>Quantity </span><input type="number" value="1" id="quantity" name="quantity" min="1" max="5">
+      </div>
+      <br>
+      <p>In Stock: 4 Items</p>
+      <button class="btn btn-md btn-primary">Buy Now</button>
+      <button class="btn btn-md btn-primary" style="margin-left:10px;">Add to Cart</button>
+    </div>
+  </div>
+</div>

@@ -36,7 +36,7 @@ export class UserService {
           console.log('Response in service: ', res);
           this.isAuthenticated = true;
           console.log('First name before ', this.user);
-          this.user = res.user;
+          this.user = res['user'];
           console.log('user: ', this.user);
           // console.log('First name: ', t);
           return { success: true, result: res };

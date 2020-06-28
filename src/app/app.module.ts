@@ -1,3 +1,4 @@
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminModule } from './admin/admin.module';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductModule } from './product/product.module';
@@ -24,6 +25,7 @@ const ROUTES: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'auth/signin', component: SignInComponent},
   {path: 'auth/registration', component: RegistrationComponent},
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
@@ -33,7 +35,8 @@ const ROUTES: Routes = [
     SignInComponent,
     RegistrationComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

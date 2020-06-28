@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
+import config from '../../../config';
 
 @Component({
   selector: 'app-product-detail',
@@ -8,13 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
-
+  constructor(private route: ActivatedRoute, private productService: ProductService) { }
+  product: any;
   ngOnInit() {
-    this.route.queryParams
+    console.log('Config ', config);
+    this.route.params
     .subscribe(product => {
       console.log(product);
-      //this.categoryType = params.category;
+      const id = product.id;
+      console.log(typeof id);
+      this.productService.getPillowById(id)
+      .subscribe(
+        data => this.product = data.product,
+        err => console.error('Error ', err),
+        () => console.log('Fetched the product')
+      );
+      // this.categoryType = params.category;
       console.log('Product: ', product);
     });
   }

@@ -37,6 +37,19 @@ export class ProductService {
     );
   }
 
+  getPillowById(id) {
+    console.log(id);
+    const productId = id;
+    return this.http.get(this.uri + '/products/' + productId, { withCredentials: true })
+    .pipe(
+      map(res => {
+        console.log('Response from pillowbyid ', res);
+        return { product: res};
+      }),
+      catchError(error => throwError(error))
+    );
+  }
+
   showCurtains() {
     this.isBath = this.isRugs = this.isBedsheets = this.isDuvets = this.isBlankets = false;
     this.isCurtains = true;

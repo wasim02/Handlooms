@@ -12,7 +12,7 @@
                     <a [routerLink]="['/products',towel._id]"><b>{{ towel.title }}<span style="float: right; ">${{towel.price}}</span></b></a>
                     <!--<button class="btn btn-md " name="productId " (click)="goToDetail(towel) "
                       style="background-color: #a30f2d; color:white; text-align: center ">Add to Cart</button> -->
-                    <button class="btn btn-md " name="productId " (click)="showFlash()" style="background-color: #a30f2d; color:white; text-align: center ">Add to Cart</button>
+                    <button class="btn btn-md " name="productId " (click)="addToCart(towel)" style="background-color: #a30f2d; color:white; text-align: center ">Add to Cart</button>
                     
                 </div>
             </div>

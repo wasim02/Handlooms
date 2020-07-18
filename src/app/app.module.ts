@@ -25,6 +25,7 @@ const ROUTES: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'auth/signin', component: SignInComponent},
   {path: 'auth/registration', component: RegistrationComponent},
+  {path: 'cart', component: CartComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

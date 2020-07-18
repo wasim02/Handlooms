@@ -12,6 +12,10 @@ export class AppComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.count = this.productService.getCount();
+    // this.productService.getCount()
+    // .subscribe(
+    //   data => this.count = data,
+    //   err => console.log(err)
+    // );
   }
 }

@@ -89,10 +89,12 @@ export class ProductListComponent implements OnInit {
     this.router.navigate(['products/great'], {queryParams: {name: towel.name}});
   }
 
-  showFlash() {
+  addToCart(product: Product) {
     // 1st parameter is a flash message text
     // 2nd parameter is optional. You can pass object with options.
-    this.flashMessage.show('Product added to your cart', { cssClass: 'alert-success', timeout: 2000 });
-    this.flashMessage.grayOut(true);
+    // Adding the product to cart
+    this.productService.addToCart(product);
+    // this.flashMessage.show('Product added to your cart', { cssClass: 'alert-success', timeout: 2000 });
+    // this.flashMessage.grayOut(true);
   }
 }

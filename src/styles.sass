@@ -1,27 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../src/sass/variables'
 .dropdown-menu>.dropdown-item:hover
-  background-color: #00061a;
-  color: white;
+  background-color: #00061a
+  color: white
 
 #carouselExampleIndicators .carousel-inner div img
-    width: 100%;
-    height: 700px;
+    width: 100%
+    height: 700px
 
 
 html,
 body
-  height: 100%;
+  height: 100%
 
 .applyButtonColor
   backgroud-color: $buttonColor
 
 body
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
+  margin: 0
+  font-family: 'Roboto', sans-serif
 
 // Our App Color
 .appColor
   color: #8B0000
 
 
+$primaryColor: rgb(255, 26, 102);
+$fadePrimaryColor: #222222
+
+.mainColor
+  background-color: $primaryColor
+  &:hover
+    background-color: $fadePrimaryColor
